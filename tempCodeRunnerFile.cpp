@@ -1,0 +1,1 @@
+cout<<"i am happy"<<endl;

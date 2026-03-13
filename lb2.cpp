@@ -1,27 +1,18 @@
 #include<iostream>
 using namespace std;
 main(){
-    string day;
-    float amount;
-    float pay_amount;
 
-    cout<<"enter the day of purchase : ";
-    cin>>day;
-    cout<<"enter the amount of purchase : ";
-    cin>>amount;
+int num =0, sum = 0;
+while(num>=0)
+{
 
-    if(day=="sunday"){
-
-        pay_amount=amount*0.1;
-
-        cout<<"your amount to be paid after discount is : "<<pay_amount<<endl;
+sum=sum+num;
+cout<<"enter a number : ";
+cin>>num;
+}
+cout<<"sum: " <<sum<<endl;
 
 
-    }
-
-else{
-
-cout<<"you got no discount on purchase ....amount to paid is :  "<<amount<<endl;
 
 
 
@@ -31,4 +22,3 @@ cout<<"you got no discount on purchase ....amount to paid is :  "<<amount<<endl;
 
 
 
-}
