@@ -1,0 +1,18 @@
+Student #1
+student name : dd
+student age : 23
+student fsc marks : 234
+student ecat marks : 234
+student matric marks : 234
+Student #2
+student name : thj
+student age : 34
+student fsc marks : 3445
+student ecat marks : 3455
+student matric marks : 333
+Student #3
+student name : TT
+student age : 44
+student fsc marks : 4455
+student ecat marks : 555
+student matric marks : 555

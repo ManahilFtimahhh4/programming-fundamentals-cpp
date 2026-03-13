@@ -1,21 +1,24 @@
 #include<iostream>
+#include<fstream>
 using namespace std;
-main(){
+
+int main()
+{
+ 
+    string line;
+    fstream file;
+    file.open("example.txt",ios::in);
+    while(!file.eof())
+    {
+
+        getline(file,line);
+        cout<<line<<endl;
 
 
-int num;
-for(int x=1 ; x<=100 ; x=x+1){
 
+    }
 
-num=x+num;
-
-
-
-}
-
-cout<<"  "<<num<<endl;
-
-
+    file.close();
 
 
 }

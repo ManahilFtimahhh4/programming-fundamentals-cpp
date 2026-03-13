@@ -1,0 +1,7 @@
+student name manahil
+student addmission number : 1
+student name saram
+student addmission number : 2
+student name ali
+student addmission number : 3
+student percentage is below 70  

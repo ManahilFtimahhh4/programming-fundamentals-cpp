@@ -1,15 +1,20 @@
 #include<iostream>
+#include<fstream>
 using namespace std;
+int countlines(string filename);
+
 main(){
+    int c=countlines("task1.txt");
+    cout<<"lines are "<<c;
+ string line;
+ fstream file;
+ file.open("task1.txt",ios::app);
+ {
 
-    int multi;
 
-for( int x=1 ; x<=10 ; x=x+1 )
-{
-multi=x*5;
 
-cout<<"5"<<"*"<< x <<"="<<multi<<endl;
-}
 
+
+ }
 
 }

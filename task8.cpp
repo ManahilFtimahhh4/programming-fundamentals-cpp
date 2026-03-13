@@ -1,64 +1,169 @@
-#include<iostream>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <conio.h>
 using namespace std;
-void print(int matrix[][5],int n);
-int  largestcolumn(int matrix[][5],int n);
-void swap(int matrix[][5],int index,int n);
-main(){
-    int index;
-    cout<<"Enter the number of rows"<<endl;
-    int n;
-    cin>>n;
-    int matrix[n][5];
-    cout<<"Enter the elements of matrix"<<endl;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<5;j++){
-            cout<<"Enter element at position"<<"["<<i<<"]["<<j<<"]";
-            cin>>matrix[i][j];
+
+void addUser(string userName, string password, string role);
+void signUP(string userName, string password, string role, string fileName);
+void signIn(string userName, string password, string role, string fileName);
+int option();
+void clearScren();
+
+const int TOTAL_USERS = 10;
+int count_users = 0;
+string usernameA[TOTAL_USERS];
+string passwordA[TOTAL_USERS];
+string roleA[TOTAL_USERS];
+string file = "users.txt";
+
+main()
+{
+
+    while (true)
+    {
+        system("cls");
+        int op = option();
+        if (op == 1)
+        {
+            string name, password, role;
+            cout << "enter username : ";
+            cin >> name;
+            cout << "enter password : ";
+            cin >> password;
+            cout << "enter role : ";
+            cin >> role;
+
+            addUser(name, password, role);
+            signUP(name, password, role, file);
         }
+        else if (op == 2)
+        {
+            string name, password, role;
+            cout << "enter username : ";
+            cin >> name;
+            cout << "enter password : ";
+            cin >> password;
+            cout << "enter role : ";
+            cin >> role;
+
+            signIn(name, password, role, file);
+        }
+        else if (op == 3)
+        {
+            break;
+        }
+        else
+        {
+            cout << "invalid option ";
+        }
+        clearScren();
     }
-    print(matrix,n);
-    index = largestcolumn(matrix,n);
-    swap(matrix,index,n);
 }
-void print(int matrix[][5],int n){
-    cout<<"Original MAtrix is"<<endl;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<5;j++){
-            cout<<matrix[i][j]<<" ";
-        }
-        cout<<endl;
+
+int option()
+{
+    cout << "enter your option :" << endl;
+    cout << "1- sign up" << endl;
+    cout << "2- sign in" << endl;
+    cout << "3- exit " << endl;
+    cout << " option ... ";
+    int option;
+    cin >> option;
+    return option;
+}
+
+void addUser(string userName, string password, string role)
+{
+    if (count_users < TOTAL_USERS)
+    {
+        usernameA[count_users] = userName;
+        passwordA[count_users] = password;
+        roleA[count_users] = role;
+        count_users++;
+    }
+    else
+    {
+        cout << "no more space to add users " << endl;
     }
 }
-int largestcolumn(int matrix[][5],int n){
-    int largest=0;
-    int colindex=0;
-    for(int j=0;j<5;j++){
-        int sum=0;
-        for(int i=0;i<n;i++){
-            sum=sum+matrix[i][j];
-        }
-    if(largest<sum){
-        largest=sum;
-        colindex=j;
-    }
+
+void signUP(string userName, string password, string role, string fileName)
+{
+    fstream write;
+    write.open(fileName, ios::app);
+    string record = userName + "," + password + "," + role;
+    write << record << endl;
+    write.close();
 }
-cout<<"Column number "<<colindex+1<<" Sum is "<<largest<<endl;
-return colindex;
-}
-void swap(int matrix[][5],int index,int n){
-    if(index!=0){
-        for(int i=0;i<n;i++){
-            int temp=matrix[i][0];
-            matrix[i][0]=matrix[i][index];
-            matrix[i][index]=temp;
+
+void signIn(string userName, string password, string role, string fileName)
+{
+    bool flag = false;
+    string record;
+    fstream read;
+    read.open(fileName, ios::in);
+    while (!read.eof())
+    {
+        getline(read, record);
+        int comaCount = 1;
+        string name;
+        string pass;
+        string rol;
+        for (int x = 0; x < record.length(); x++)
+        {
+            if (record[x] == ',')
+            {
+                comaCount++;
+            }
+            else if (comaCount == 1)
+            {
+                name = name + record[x];
+            }
         }
-    }
-    cout<<"Modified Matrix is "<<endl;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<5;j++){
-            cout<<matrix[i][j]<<" ";
+        comaCount = 1;
+        for (int x = 0; x < record.length(); x++)
+        {
+            if (record[x] == ',')
+            {
+                comaCount++;
+            }
+            else if (comaCount == 2)
+            {
+                pass = pass + record[x];
+            }
         }
-        cout<<endl;
+        comaCount = 1;
+        for (int x = 0; x < record.length(); x++)
+        {
+            if (record[x] == ',')
+            {
+                comaCount++;
+            }
+            else if (comaCount == 3)
+            {
+                rol = rol + record[x];
+            }
+        }
+        if (name == userName && pass == password && rol == role)
+        {
+            cout << "you signed in " << endl;
+            flag = true;
+
+            break;
+        }
     }
 
+    if (!flag)
+    {
+        cout << "you are not a valid user " << endl;
+    }
+    read.close();
+}
+
+void clearScren()
+{
+    cout << "press any key to continue " << endl;
+    getch();
+    system("CLS");
 }

@@ -1,25 +1,16 @@
 #include<iostream>
+#include<fstream>
 using namespace std;
-main(){
 
-int num=0;
-while(num<10)
-
+int main()
 {
-num++;
 
-cout<<"  "<<num<<endl;
-
-}
-   
-
-
-
-
-
-
-
-
+string name;
+fstream file;
+file.open("task2b.txt",ios::in);
+file>>name;
+file.close();
+cout<<"the file name is : "<<name;
 
 
 
