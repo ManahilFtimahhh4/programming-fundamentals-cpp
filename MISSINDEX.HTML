@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incepting Metaverse - Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion/dist/framer-motion.umd.js"></script>
+  <style>
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+  <header class="bg-gray-800 p-6 shadow-lg">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-blue-400">Incepting Metaverse</h1>
+      <nav class="space-x-6">
+        <a href="#services" class="hover:text-blue-400">Services</a>
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-8">
+    <section class="text-center py-16">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-300">Empowering the Future Through Technology</h2>
+      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+        Choose one of our innovative services to explore how we're shaping the metaverse.
+      </p>
+    </section>
+
+    <section id="services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-800 rounded-2xl p-6 service-card cursor-pointer" onclick="showDetails('AR/VR Development')">
+        <h3 class="text-xl font-semibold mb-2 text-blue-300">AR/VR Development</h3>
+        <p class="text-gray-400">Immersive reality solutions to bring your ideas to life.</p>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 service-card cursor-pointer" onclick="showDetails('Blockchain Solutions')">
+        <h3 class="text-xl font-semibold mb-2 text-blue-300">Blockchain Solutions</h3>
+        <p class="text-gray-400">Secure, decentralized tech for the next-gen internet.</p>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 service-card cursor-pointer" onclick="showDetails('AI Integration')">
+        <h3 class="text-xl font-semibold mb-2 text-blue-300">AI Integration</h3>
+        <p class="text-gray-400">Smarter systems powered by cutting-edge machine learning.</p>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 service-card cursor-pointer" onclick="showDetails('IoT Solutions')">
+        <h3 class="text-xl font-semibold mb-2 text-blue-300">IoT Solutions</h3>
+        <p class="text-gray-400">Connect your world through intelligent devices and sensors.</p>
+      </div>
+      <div class="bg-gray-800 rounded-2xl p-6 service-card cursor-pointer" onclick="showDetails('3D Asset Design')">
+        <h3 class="text-xl font-semibold mb-2 text-blue-300">3D Asset Design</h3>
+        <p class="text-gray-400">Stunning 3D visuals tailored for the metaverse and beyond.</p>
+      </div>
+    </section>
+
+    <section id="details" class="mt-16 bg-gray-800 rounded-2xl p-8 hidden">
+      <h3 class="text-2xl font-bold text-blue-400 mb-4">Service Details</h3>
+      <p id="service-description" class="text-gray-300"></p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 mt-16 p-6 text-center">
+    <p class="text-gray-400">&copy; 2025 Incepting Metaverse. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showDetails(service) {
+      const descriptions = {
+        "AR/VR Development": "We create immersive AR/VR experiences for education, training, entertainment, and enterprise applications.",
+        "Blockchain Solutions": "Our blockchain services include smart contracts, dApps, and secure ledger integrations.",
+        "AI Integration": "We embed AI into business processes for automation, insights, and smarter decision-making.",
+        "IoT Solutions": "Our IoT offerings connect physical devices to the cloud for real-time control and analytics.",
+        "3D Asset Design": "From characters to environments, we design high-quality 3D assets for various platforms."
+      };
+      document.getElementById('service-description').innerText = descriptions[service] || 'Details coming soon...';
+      document.getElementById('details').classList.remove('hidden');
+      document.getElementById('details').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>
