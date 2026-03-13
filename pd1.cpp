@@ -1,46 +1,42 @@
 #include<iostream>
 using namespace std;
-main(){
+main()
+{
+    string friut[50]={"peach","apple","guava","watermelon"};
 
-string name;
-int price;
-int discount;
-int actual;
+    int price[4]={60,70,40,30};
+string fru;
+int pri, total_amount;
 
-cout<<"enter country name:";
-cin>>name;
-cout<<"enter ticket price in dollars: ";
-cin>>price;
+cout<<"enter the friut you want to buy : ";
+cin>>fru;
 
-if(name=="ireland"){
-discount=(0.05)*price;
-actual=price-discount;
-cout<<"your actual price is:"<<actual<<endl;
-}
-  else{
-discount=(0.1)*price;
-actual=price-discount;
-cout<<"your actual amount is:"<<actual<<endl;
-}
-}
+cout<<"enter the number of kgs you want to buy : " ;
+cin>>pri;
+if(fru=="peach")
+    {
+        total_amount=pri*price[0];
+    }
+    else if(fru=="apple")
+    {
+        total_amount=pri*price[1];
+    }
 
+    else if(fru=="guava")
+    {
+        total_amount=pri*price[2];
+    }
 
-
-
-
-
-
-
-
-
+    else if(fru=="watermelon")
+    {
+        total_amount=pri*price[3];
+    }
 
 
 
 
 
-
-
-
+cout<<"total amount = "<<total_amount<<endl;
 
 
 
