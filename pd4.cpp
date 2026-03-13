@@ -1,69 +1,44 @@
 #include<iostream>
 using namespace std;
-main(){
-  string month;
-  int date;
-  
-  cout<<"enter you birth month : ";
-  cin>>month;
+main()
 
-  cout<<"enter your date of birth : ";
-  cin>>date;
+{
+  float roses;
+  float tulips;
+  float white_roses;
+  float moneyR;
+  float moneyT;
+  float moneyW;
+  float total;
+  float discount;
+  float afterdiscount;
+	
+	
 
-if(month=="march" && date>20 || month=="april" && date<19){
-    cout<<"your zodiac sign is ARIES"<<endl;
-    cout<<"your symbol is : THE RAM"<<endl;
-}
-if(month=="april" && date>20 || month=="may" && date<20){
-    cout<<"your zodiac sign is TAURUS"<<endl;
-    cout<<"your symbol is : THE BULL"<<endl;
-}
-if(month=="april" && date>21 || month=="june" && date<20){
-    cout<<"your zodiac sign is  GIMINI"<<endl;
-    cout<<"your symbol is : THE TWINS "<<endl;
-}
+	cout<<"enter no of rose:";
+	cin>>roses;
+ 
+moneyR=roses*2.00;
 
-if(month=="june" && date>21 || month=="july" && date<22){
-    cout<<"your zodiac sign is CANCER "<<endl;
-    cout<<"your symbol is : THE CRAB "<<endl;
-}
-if(month=="july" && date>23 || month=="august" && date<22){
-    cout<<"your zodiac sign is LEO"<<endl;
-    cout<<"your symbol is : THE LION "<<endl;
-}
+	cout<<"enter no of tulip:";
+	cin>>tulips;
 
-if(month=="august" && date>23 || month=="september" && date<22){
-    cout<<"your zodiac sign is VIRGO"<<endl;
-    cout<<"your symbol is : THE VIRGIN "<<endl;
-}
-if(month=="september" && date>23 || month=="october" && date<22){
-    cout<<"your zodiac sign is LIBRA "<<endl;
-    cout<<"your symbol is : THE SCALES"<<endl;
-}
+moneyT=tulips*4.10;
+	
+	cout<<"enter no of white roses:";
+	cin>>white_roses;
 
-if(month=="october" && date>23 || month=="november" && date<21){
-    cout<<"your zodiac sign is SCORPIO "<<endl;
-    cout<<"your symbol is : THE  SCORPION"<<endl;
-}
+moneyW=white_roses*2.50;
 
-if(month=="november" && date>22 || month=="december" && date<21){
-    cout<<"your zodiac sign is SAGITTARIUS"<<endl;
-    cout<<"your symbol is : THE ARCHERS "<<endl;
-}
+total=moneyR+moneyT+moneyW;
 
-if(month=="december" && date>22 || month=="january" && date<19){
-    cout<<"your zodiac sign is CAPRICORNS "<<endl;
-    cout<<"your symbol is : THE GOAT "<<endl;
-}
+	cout<<"your total amount is"<<total<<endl;	
+		
+	if(total>200){
+	 discount=(total*0.2);
+	 afterdiscount=total-discount;
 
-if(month=="january" && date>20 || month=="feburary" && date<18){
-    cout<<"your zodiac sign is  AQURIUS"<<endl;
-    cout<<"your symbol is : THE WATER BEARER"<<endl;
+	cout<<"your amount after discount is:"<<afterdiscount<<endl;}
 }
-if(month=="feburary" && date>19 || month=="march" && date<20){
-    cout<<"your zodiac sign is PISCES "<<endl;
-    cout<<"your symbol is : THE FISHEScls "<<endl;
-}
-
-
-}
+ 
+	

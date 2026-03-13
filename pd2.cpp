@@ -1,16 +1,21 @@
 #include<iostream>
 using namespace std;
-main(){
-    string country;
-    cout<<"enter your country to be visited here : ";
-    cin>>country;
-        if(country=="germany" || country=="australia"){
-            cout<<"you should not vist these places";
-        }
-        else if(country!="germany" || country!="australia"){
+main()
+{
 
-    cout<<"you should visit these countries";
+   int speed;
+   
+	cout<<"your speed is:";
+        cin>>speed;
+	
+	
+	if(speed<=100){
 
-        }
-    }
+        	cout<<"perfect!you are going good ";
+}
+	if(speed>100){
+
+	        cout<<"halt...YOU WILL BE CHALLANED";
+}
+}
 

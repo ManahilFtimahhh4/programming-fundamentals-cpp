@@ -1,24 +1,49 @@
 #include<iostream>
 using namespace std;
 main(){
-    string temprature;
-    string humidity;
-    cout<<"enter the temprature : ";
-    cin>>temprature;
-    cout<<"enter humidity here : ";
-    cin>>humidity;
-        if(temprature=="warm" && humidity=="dry"){
-            cout<<"your can play tennis";}
 
-            if(temprature=="warm" && humidity=="humid"){
-                cout<<"you can swim";}
+string name;
+int price;
+int discount;
+int actual;
 
-                if(temprature=="cold" && humidity=="dry"){
-                    cout<<"you can play basketball";}
+cout<<"enter country name:";
+cin>>name;
+cout<<"enter ticket price in dollars: ";
+cin>>price;
 
-                    if(temprature=="cold" && humidity=="humid"){
-                        cout<<  "you sould watch tv show";
-                    }
+if(name=="ireland"){
+discount=(0.05)*price;
+actual=price-discount;
+cout<<"your actual price is:"<<actual<<endl;
 }
-            
-        
+  else{
+discount=(0.1)*price;
+actual=price-discount;
+cout<<"your actual amount is:"<<actual<<endl;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
